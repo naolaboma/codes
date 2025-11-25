@@ -1,0 +1,16 @@
+# Problem: Rotate Array - https://leetcode.com/problems/rotate-array/
+
+func rotate(nums []int, k int)  {
+    n := len(nums)
+    k %= len(nums)
+    rev(nums, 0, n-1)
+    rev(nums, 0, k-1)
+    rev(nums, k, n-1)
+}
+func rev(nums []int, l int, r int){
+    for l<r{
+        nums[l], nums[r] = nums[r], nums[l]
+        l++
+        r--
+    }
+}
