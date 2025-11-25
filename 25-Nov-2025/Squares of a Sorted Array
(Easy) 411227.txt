@@ -1,0 +1,20 @@
+# Problem: Squares of a Sorted Array
+(Easy) - https://leetcode.com/problems/squares-of-a-sorted-array/
+
+func sortedSquares(nums []int) []int {
+    n := len(nums)
+    ans := make([]int, n)
+    l, r := 0, n-1
+    idx := n-1
+    for l<=r {
+        if nums[l]*nums[l] > nums[r]*nums[r]{
+            ans[idx] = nums[l]*nums[l]
+            l++
+        } else{
+            ans[idx] = nums[r]*nums[r]
+            r--
+        }
+        idx--
+    }
+    return ans
+}
