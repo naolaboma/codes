@@ -1,0 +1,22 @@
+# Problem: Plus One - https://leetcode.com/problems/plus-one/
+
+func plusOne(digits []int) []int {
+    n := len(digits)
+    c := 0
+    p := n-1
+    for p >= 0 {
+        if digits[p] == 9{
+            digits[p] = 0
+            c = 1
+            p --
+        } else {
+            digits[p] ++
+            c--
+            break
+        }
+    }
+    if c > 0{
+        digits = append([]int{c}, digits...)
+    } 
+    return digits
+}
