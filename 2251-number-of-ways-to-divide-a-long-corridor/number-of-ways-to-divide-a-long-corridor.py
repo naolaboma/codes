@@ -3,6 +3,7 @@ class Solution:
         MOD = 1_000_000_007
         count = 1
         seats = 0
+        
         previous_pair_last = None
         for index, thing in enumerate(corridor):
             if thing == "S":
