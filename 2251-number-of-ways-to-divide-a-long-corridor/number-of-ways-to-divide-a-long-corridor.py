@@ -1,6 +1,5 @@
 class Solution:
     def numberOfWays(self, corridor: str) -> int:
-        # Store 1000000007 in a variable for convenience
         MOD = 1_000_000_007
         count = 1
         seats = 0
