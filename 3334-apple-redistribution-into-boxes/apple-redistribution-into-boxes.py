@@ -4,9 +4,10 @@ class Solution:
 
         summapple = sum(apple)
         count = 0
-        print(capacity)
         for x in capacity:
             if summapple > 0:
+                summapple-=x
                 count +=1
-            summapple-=x
+            else:
+                break
         return count
