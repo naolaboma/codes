@@ -11,8 +11,7 @@ func plusOne(digits []int) []int {
         }
     }
     if c == 1 {
-        digits = append([]int{1}, digits...)
+        return append([]int{1}, digits...)
     }
-    return digits
-
+    return nil
 }
