@@ -4,7 +4,8 @@ class Solution:
         l, r = 0, len(nums)-1
         maxi = float('-inf')
         while l<r:
-            maxi = max(maxi, nums[l]+nums[r])
+            summ = nums[l]+nums[r]
+            maxi = max(maxi, summ)
             l+=1
             r-=1
         return maxi
