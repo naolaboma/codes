@@ -1,10 +1,13 @@
 func containsDuplicate(nums []int) bool {
-    seen := make(map[int]int)
+    for i := 0; i < len(nums)-1; i++{
+        if ok:= nums[i]== nums[i+1]; ok{
+            return true
+        }
+    }
+    slices.Sort(nums)
 
-    for _, v := range nums{
-        if seen[v] == 0{
-            seen[v] += 1
-        } else{
+    for i := 0; i <len(nums)-1; i++{
+        if ok := nums[i]==nums[i+1]; ok{
             return true
         }
     }
