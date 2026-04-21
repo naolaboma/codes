@@ -1,22 +1,15 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
-        OFFSET = 50000  # shift negatives to zero index
-        SIZE = 100001   # from -50000 to 50000 inclusive
-
-        count = [0] * SIZE
-
-        # count frequencies
+        #counting sort
+        mini = min(nums)
+        maxi = max(nums)
+        count = [0] * ((maxi - mini) + 1)
         for num in nums:
-            count[num + OFFSET] += 1
-
-        # rebuild sorted array
-        i = 0
-        for val in range(SIZE):
-            freq = count[val]
-            if freq:
-                actual_val = val - OFFSET
-                for _ in range(freq):
-                    nums[i] = actual_val
-                    i += 1
-
+            count[num - mini] +=1
+        idx = 0
+        for i, freq in enumerate(count):
+            while freq > 0:
+                nums[idx] = i + mini
+                idx += 1
+                freq -= 1
         return nums
