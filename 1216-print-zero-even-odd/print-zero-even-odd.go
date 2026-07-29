@@ -51,6 +51,8 @@ func (z *ZeroEvenOdd) Odd(printNumber func(int)) {
 
         printNumber(i)
 
-        z.zeroTurn <- struct{}{}
+        if i < z.n {
+            z.zeroTurn <- struct{}{}
+        }
     }
 }
